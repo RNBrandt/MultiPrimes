@@ -21,4 +21,19 @@ describe PrimeMultiplicationTable do
       end
     end
   end
+
+  describe '#primes' do
+    it 'returns an array of primes' do
+      expect(prime_table.primes).to eq([2,3])
+    end
+
+    context 'when the prime_table length is changed' do
+      let(:size) { 10 }
+      let(:ten_primes) { [2,3,5,7,11,13,17,19,23,29] }
+
+      it 'returns an array of primes of a specified length' do
+        expect(prime_table.primes).to eq(ten_primes)
+      end
+    end
+  end
 end
