@@ -17,6 +17,10 @@ class PrimeMultiplicationTable
 
   private
 
+  def primes_multiples
+    primes.map { |x_prime| primes.map { |y_prime| x_prime * y_prime} }
+  end
+
   def set_primes
     primes = [2]
     counter = 3

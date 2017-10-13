@@ -36,4 +36,12 @@ describe PrimeMultiplicationTable do
       end
     end
   end
+
+  xdescribe '#primes_multiples' do
+    it "returns a multidimensional array of the primes' multiples" do
+      expect(prime_table.primes_multiples.length).to eq(size)
+      expect(prime_table.primes_multiples[0]).to eq([4,6])
+      expect(prime_table.primes_multiples[1]).to eq([6,9])
+    end
+  end
 end
