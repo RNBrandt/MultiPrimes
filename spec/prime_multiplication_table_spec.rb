@@ -71,11 +71,16 @@ describe PrimeMultiplicationTable do
   end
 
   describe '#prime_table_printer' do
+    subject { prime_table.prime_table_printer }
     let(:size) { 10 }
+    let(:last_row_values) { subject.rows.last.cells.map { |cell| cell.value} }
+
+    it 'returns a TerminalTable' do
+      expect(subject.class.name).to eq("Terminal::Table")
+    end
 
     it 'prints the correct values' do
-      expect(prime_table.prime_table_printer[0]).to eq(prime_table.prime_multiple_table_rows[0])
-      expect(prime_table.prime_table_printer[9]).to eq(prime_table.prime_multiple_table_rows[9])
+      expect(last_row_values).to eq(prime_table.prime_multiple_table_rows.last)
     end
   end
 end
